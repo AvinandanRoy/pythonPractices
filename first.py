@@ -18,3 +18,5 @@ while i < len(a):
         print(a[i],b[j])
         j += 1
     i+=1
+
+# multiplication Table using nested for loop 1 t0 10 multiplication table number :
