@@ -1,11 +1,37 @@
-def swap_elements_by_index(lst, idx1, idx2):
-    lst[idx1], lst[idx2] = lst[idx2], lst[idx1]
-    return lst
+# From Avinandan Roy(221-15-4899)-01776890663
 
-# Example usage:
-my_list = [1, 2, 3, 4, 5]
-print("Original List:", my_list)
+sunday = float(input("Your Sunday expense : "))
+monday = float(input("Your Monday expense : "))
+tuesday = float(input("Your Tuesday expense : "))
+wednessday = float(input("Your wednesday expense : "))
+thusday = float(input("Your Thusday expense : "))
+friday = float(input("Your Friday expense : "))
+saturday = float(input("Your Saturday expense : "))
+weakEx = sunday+monday+tuesday+wednessday+thusday+friday+saturday ;
 
-# Swapping elements at index 1 and 3
-my_list = swap_elements_by_index(my_list, 1, 3)
-print("List after swapping elements at index 1 and 3:", my_list)
+print(f'Weakly Expense : ${weakEx}')
+print(f'Average :${weakEx/7}')
+
+myDict = {
+    'Sunday' : sunday,
+    "Monday" : monday,
+    'Tuesday' : tuesday,
+    'wednesday' : wednessday,
+    'Thusday' : thusday,
+    'Friday' : friday,
+    'Saturday' : saturday
+}
+
+def exceedBuudget(mydict):
+    newDict ={}
+    for key , val in myDict.items():
+        if val > 2000:
+            newDict.update({key: val})
+    return newDict
+
+def printDict(myDict):
+    for key,val in myDict.items():
+        print(f"{key} : ${val}")
+
+print("Days where expenses execeed the daily budget : ")
+printDict(exceedBuudget(myDict))
